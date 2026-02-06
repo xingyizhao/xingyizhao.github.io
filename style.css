@@ -25,14 +25,14 @@ a:hover, a:focus{
   color:#1558b0;
 }
 
-/* Big side margins: make a narrow centered column */
+/* Big side margins: narrow centered column */
 .container{
-  max-width: 900px;          /* <= more margin on both sides */
+  max-width: 900px;          /* more margin on both sides */
   margin: 0 auto;
   padding: 42px 22px 70px;
 }
 
-/* NAV: simple text links */
+/* NAV: simple black text links */
 .nav{
   display:flex;
   justify-content:flex-start;
@@ -47,7 +47,7 @@ a:hover, a:focus{
   text-decoration: underline;
 }
 
-/* HERO: text left + photo right, like the example */
+/* HERO: text left + photo right */
 .hero{
   display:grid;
   grid-template-columns: 1fr 260px;  /* fixed photo column */
@@ -59,6 +59,20 @@ a:hover, a:focus{
 /* Keep everything aligned with the left column width */
 .hero-left{
   min-width: 0;
+}
+
+/* Make paragraph look like the example: comfy reading width + airy spacing */
+.hero-left,
+.section{
+  max-width: 560px;          /* controls line length */
+}
+
+.hero-left p,
+.section p{
+  font-size: 18px;           /* slightly larger text */
+  line-height: 1.9;          /* airy spacing */
+  letter-spacing: 0.01em;    /* subtle */
+  margin: 0 0 18px;
 }
 
 /* Photo */
@@ -83,16 +97,13 @@ h2{
   margin: 0 0 18px;
 }
 
-/* Paragraph spacing */
-p{margin: 14px 0}
-
 .small{
   color: var(--muted);
   font-size: 14px;
   margin-top: 18px;
 }
 
-/* Sections below: single column (NOT two columns) */
+/* Sections below: single column */
 .section{
   margin-top: 38px;
 }
@@ -124,4 +135,6 @@ p{margin: 14px 0}
   .container{max-width: 720px;}
   .hero{grid-template-columns:1fr;gap:18px}
   .profile-photo{width: 220px}
+  .hero-left, .section{max-width: 100%;}
+  .hero-left p, .section p{font-size: 17px; line-height: 1.8;}
 }
