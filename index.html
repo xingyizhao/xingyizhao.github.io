@@ -1,11 +1,122 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Xingyi Zhao</title>
-  </head>
-  <body>
-    <h1>Hello, I'm Xingyi Zhao</h1>
-    <p>Welcome to my GitHub Pages site.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xingyi Zhao</title>
+  <meta name="description" content="Xingyi Zhao — PhD student in NLP & AI security. Research on LLM security, backdoors, and alignment robustness." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <div class="nav">
+      <div class="left">
+        <div class="badge">Xingyi Zhao</div>
+        <div class="badge">NLP • AI Security • LLM Safety</div>
+      </div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card" id="about">
+        <h1>Xingyi Zhao</h1>
+        <h2>PhD Student • NLP & AI Security</h2>
+        <p>
+          I work on <b>LLM security</b>, with a focus on <b>backdoor attacks & unlearning</b>, robust training,
+          and safety alignment. I build training/evaluation pipelines for open-source LLMs and study how
+          malicious behaviors persist (or fail) under post-training.
+        </p>
+        <p class="small">
+          Interests: backdoors • alignment robustness • RLHF/SFT/DPO • adversarial evaluation • efficient training (LoRA/DeepSpeed)
+        </p>
+        <p class="small">
+          Links:
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
+          <a href="https://github.com/xingyizhao" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Quick Info</h2>
+        <div class="kv">
+          <div>Affiliation</div><span>Utah State University (PhD)</span>
+          <div>Area</div><span>NLP, LLM Security, Safety</span>
+          <div>Recent</div><span>Robust Gradient Ascent for Backdoor Unlearning (ACL submission)</span>
+          <div>CV</div><span><a href="cv.html">Open CV page →</a></span>
+        </div>
+        <div class="footer">Tip: add a photo later as <code>photo.jpg</code> and I’ll wire it in.</div>
+      </div>
+    </div>
+
+    <div class="grid" id="research">
+      <div class="card">
+        <h2>Research Focus</h2>
+        <div class="item">
+          <b>Backdoor persistence & unlearning</b>
+          <ul class="list">
+            <li>Trigger-induced behaviors in instruction tuning and downstream SFT</li>
+            <li>Unlearning without over-correction / behavior remapping</li>
+            <li>Geometry/loss-landscape analysis for persistence</li>
+          </ul>
+        </div>
+        <div class="item" style="margin-top:12px;">
+          <b>Robust training & alignment</b>
+          <ul class="list">
+            <li>RLHF variants (SFT/DPO/PPO), safety alignment</li>
+            <li>Adversarial evaluation, shortcut learning diagnostics</li>
+            <li>Efficient finetuning (LoRA/PEFT, DeepSpeed)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" id="publications">
+        <h2>Selected Publications / Submissions</h2>
+
+        <div class="item">
+          <b>Robust Gradient Ascent for Backdoor Unlearning</b>
+          <div class="small">Submission • 2025</div>
+          <div class="small">
+            <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a>
+          </div>
+        </div>
+
+        <div class="item" style="margin-top:12px;">
+          <b>More</b>
+          <div class="small">
+            See full list on <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.
+          </div>
+        </div>
+
+        <div class="footer">
+          Replace the placeholders with your real Scholar/PDF/Code links.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="contact" style="margin-top:18px;">
+      <h2>Contact</h2>
+      <p class="small">
+        Email: <a href="mailto:YOUR_EMAIL@usu.edu">YOUR_EMAIL@usu.edu</a><br/>
+        GitHub: <a href="https://github.com/xingyizhao" target="_blank" rel="noopener">github.com/xingyizhao</a>
+      </p>
+    </div>
+
+    <div class="footer">
+      © <span id="y"></span> Xingyi Zhao · Built with GitHub Pages
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
