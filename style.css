@@ -16,8 +16,18 @@ body{
   font-size: 16px;
 }
 
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
+/* Link color (normal blue, not pink/purple) */
+a,
+a:visited {
+  color: #1a73e8;          /* blue */
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: #1558b0;          /* darker blue on hover */
+  text-decoration: underline;
+}
 
 .container{max-width:1050px;margin:0 auto;padding:36px 18px 60px}
 
