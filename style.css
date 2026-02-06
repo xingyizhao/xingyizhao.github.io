@@ -1,99 +1,127 @@
 :root{
   --bg:#ffffff;
-  --text:#111827;      /* near-black */
-  --muted:#4b5563;     /* gray */
-  --accent:#b400ff;    /* link color (you can change later) */
-  --border:#e5e7eb;    /* light border */
-  --card:#ffffff;
+  --text:#111827;
+  --muted:#4b5563;
+  --border:#e5e7eb;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+
 body{
-  background: #ffffff;
-  color: #111827;
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
   font-size: 16px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
-/* Link color (normal blue, not pink/purple) */
-a,
-a:visited {
-  color: #1a73e8;          /* blue */
+/* Normal links */
+a, a:visited{
+  color:#1a73e8;
   text-decoration: underline;
 }
-
-a:hover,
-a:focus {
-  color: #1558b0;          /* darker blue on hover */
-  text-decoration: underline;
+a:hover, a:focus{
+  color:#1558b0;
 }
 
-.container{max-width:1050px;margin:0 auto;padding:36px 18px 60px}
+/* Big side margins: make a narrow centered column */
+.container{
+  max-width: 900px;          /* <= more margin on both sides */
+  margin: 0 auto;
+  padding: 42px 22px 70px;
+}
 
-/* turn off the dark sticky nav look */
+/* NAV: simple text links */
 .nav{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0;
-  border:none;
-  background:transparent;
-  position: static;
-  margin-bottom: 22px;
+  display:flex;
+  justify-content:flex-start;
+  gap:18px;
+  margin-bottom: 26px;
 }
-.nav .left{display:flex;gap:10px;align-items:center}
-.badge{
-  padding:6px 10px;border:1px solid var(--border);border-radius:999px;
-  background:#fff;color:var(--muted);font-size:13px;
+.nav a, .nav a:visited{
+  color:#111827;             /* black */
+  text-decoration:none;
 }
-.nav .links{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
-.nav .links a{padding:6px 0;border-radius:0}
-.nav .links a:hover{background:transparent}
+.nav a:hover{
+  text-decoration: underline;
+}
 
-/* HERO: text left, photo right */
+/* HERO: text left + photo right, like the example */
 .hero{
   display:grid;
-  grid-template-columns: 1.3fr .7fr;
-  gap:26px;
+  grid-template-columns: 1fr 260px;  /* fixed photo column */
+  gap: 34px;
   align-items:start;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
-/* make cards look like plain sections */
-.card{
-  border:none;
-  background:transparent;
-  padding:0;
+/* Keep everything aligned with the left column width */
+.hero-left{
+  min-width: 0;
 }
 
-h1{font-size:46px;letter-spacing:-0.02em;margin:0 0 8px}
-h2{font-size:18px;margin:0 0 16px;color:var(--muted);font-weight:500}
-p{margin:12px 0}
-
-.small{color:var(--muted);font-size:14px}
-
-/* photo on right */
+/* Photo */
 .profile-photo{
-  width:100%;
-  max-width: 360px;
-  border-radius: 10px;
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
   display:block;
-  margin-left:auto;
-  border:1px solid var(--border);
 }
 
-/* sections below can stay as a simple grid */
-.grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px;
+/* Headings */
+h1{
+  font-size: 54px;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
 }
-.item{padding:14px;border:1px solid var(--border);border-radius:12px;background:#fff}
-.item b{display:block;margin-bottom:6px}
-.list{margin:8px 0 0;padding-left:18px}
-.list li{margin:6px 0}
+h2{
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
 
-.footer{margin-top:26px;color:var(--muted);font-size:13px}
+/* Paragraph spacing */
+p{margin: 14px 0}
 
+.small{
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+/* Sections below: single column (NOT two columns) */
+.section{
+  margin-top: 38px;
+}
+
+.section-title{
+  font-size: 36px;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.item{
+  padding: 0;
+  margin: 10px 0;
+}
+
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.footer{
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Mobile */
 @media (max-width:820px){
-  .hero{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-  .profile-photo{max-width: 100%; margin: 0;}
+  .container{max-width: 720px;}
+  .hero{grid-template-columns:1fr;gap:18px}
+  .profile-photo{width: 220px}
 }
