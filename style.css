@@ -64,7 +64,7 @@ a:hover, a:focus{
 /* Make paragraph look like the example: comfy reading width + airy spacing */
 .hero-left,
 .section{
-  max-width: 900px;          /* controls line length */
+  max-width: 950px;          /* controls line length */
 }
 
 .hero-left p,
@@ -77,11 +77,11 @@ a:hover, a:focus{
 
 /* Photo */
 .profile-photo{
-  width: 240px;
+  width: 220px;
   height: auto;
   border-radius: 6px;
   border: 1px solid var(--border);
-  display:block;
+  display: block;
   margin-top: 160px;  
 }
 
