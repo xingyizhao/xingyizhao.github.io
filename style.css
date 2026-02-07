@@ -27,7 +27,7 @@ a:hover, a:focus{
 
 /* Big side margins: narrow centered column */
 .container{
-  max-width: 900px;          /* more margin on both sides */
+  max-width: 1200px;          /* more margin on both sides */
   margin: 0 auto;
   padding: 42px 22px 70px;
 }
