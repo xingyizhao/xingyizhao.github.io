@@ -12,7 +12,7 @@ body{
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  font-size: 18px;
+  font-size: 20px;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
@@ -53,7 +53,7 @@ a:hover, a:focus{
   grid-template-columns: 1fr 260px;  /* fixed photo column */
   gap: 34px;
   align-items:start;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 
 /* Keep everything aligned with the left column width */
@@ -64,12 +64,12 @@ a:hover, a:focus{
 /* Make paragraph look like the example: comfy reading width + airy spacing */
 .hero-left,
 .section{
-  max-width: 800px;          /* controls line length */
+  max-width: 900px;          /* controls line length */
 }
 
 .hero-left p,
 .section p{
-  font-size: 21px;           /* slightly larger text */
+  font-size: 22px;           /* slightly larger text */
   line-height: 1.9;          /* airy spacing */
   letter-spacing: 0.01em;    /* subtle */
   margin: 0 0 18px;
@@ -77,7 +77,7 @@ a:hover, a:focus{
 
 /* Photo */
 .profile-photo{
-  width: 220px;
+  width: 240px;
   height: auto;
   border-radius: 6px;
   border: 1px solid var(--border);
