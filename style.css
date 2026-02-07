@@ -53,7 +53,7 @@ a:hover, a:focus{
   grid-template-columns: 1fr 260px;  /* fixed photo column */
   gap: 34px;
   align-items:start;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* Keep everything aligned with the left column width */
@@ -82,7 +82,9 @@ a:hover, a:focus{
   border-radius: 6px;
   border: 1px solid var(--border);
   display:block;
+  margin-top: 20px;  
 }
+
 
 /* Headings */
 h1{
