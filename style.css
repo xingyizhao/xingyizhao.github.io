@@ -210,7 +210,7 @@ h2{
 
 /* Left column: tag + image */
 .pub-left{
-  width: 500px;            /* controls left column width */
+  width: 300px;            /* controls left column width */
   flex: 0 0 140px;
 }
 
