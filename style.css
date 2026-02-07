@@ -64,7 +64,7 @@ a:hover, a:focus{
 /* Make paragraph look like the example: comfy reading width + airy spacing */
 .hero-left,
 .section{
-  max-width: 560px;          /* controls line length */
+  max-width: 720px;          /* controls line length */
 }
 
 .hero-left p,
