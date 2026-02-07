@@ -201,6 +201,45 @@ h2{
   text-decoration: none;
 }
 
+.pub-with-thumb{
+  display:flex;
+  gap: 18px;
+  align-items:flex-start;
+  margin-top: 18px;
+}
+
+/* Left column: tag + image */
+.pub-left{
+  width: 140px;            /* controls left column width */
+  flex: 0 0 140px;
+}
+
+.pub-left .tag{
+  display:inline-block;
+  margin-bottom: 10px;
+}
+
+.pub-thumb{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display:block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Right column content */
+.pub-right{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Keep title/author/venue spacing nice */
+.pub-right .pub-title{ margin: 0 0 6px; }
+.pub-right .pub-authors{ margin: 0 0 4px; }
+.pub-right .pub-venue{ margin: 0 0 12px; }
+
+
 /* Mobile */
 @media (max-width:820px){
   .container{max-width: 720px;}
@@ -208,4 +247,6 @@ h2{
   .profile-photo{width: 220px}
   .hero-left, .section{max-width: 100%;}
   .hero-left p, .section p{font-size: 17px; line-height: 1.8;}
+  .pub-with-thumb{ flex-direction: column; }
+  .pub-left{ width: 220px; flex: 0 0 auto; }
 }
