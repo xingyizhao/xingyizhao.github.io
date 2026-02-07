@@ -1,19 +1,16 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Xingyi Zhao</title>
-  <meta name="description" content="Xingyi Zhao — PhD candidate at Utah State University. Research on LLM security and safe post-training." />
-  <!-- bump v= number whenever you change CSS to avoid caching -->
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Xingyi Zhao — PhD student in NLP & AI security. Research on LLM security, safe post-training, and alignment." />
+  <!-- Cache-bust so CSS updates always show -->
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
-
 <body>
   <div class="container">
 
-    <!-- NAV -->
     <div class="nav">
       <a href="#about">About</a>
       <a href="#research">Research</a>
@@ -24,9 +21,10 @@
 
     <!-- HERO -->
     <div class="hero" id="about">
+      <!-- IMPORTANT: use hero-left so your CSS applies -->
       <div class="hero-left">
         <h1>Xingyi Zhao</h1>
-        <h2>PhD Candidate, Utah State University • NLP & AI Security</h2>
+        <h2>PhD Student, Utah State University • NLP & AI Security</h2>
 
         <p>
           I am Xingyi Zhao, a Ph.D. candidate in Computer Science at Utah State University,
@@ -55,17 +53,17 @@
     <!-- RESEARCH -->
     <div class="section" id="research">
       <div class="section-title">Research</div>
-
       <p>
-        I work on LLM security and safe post-training, with a particular focus on malicious alignment
-        analysis, harmful information unlearning, and safety post-training while preserving model utility.
+        My research focuses on LLM security and safe post-training. I am particularly interested in
+        malicious alignment analysis, harmful information unlearning, and safety post-training while
+        preserving model utility.
       </p>
 
       <div class="item">
         <ul class="list">
-          <li>Malicious alignment analysis and red-teaming for LLMs</li>
-          <li>Harmful information unlearning with minimal utility loss</li>
-          <li>Robust post-training (SFT/RLHF) and safety evaluation</li>
+          <li>LLM backdoors and post-training robustness</li>
+          <li>Unlearning harmful information without utility loss</li>
+          <li>Red-teaming and evaluation for safety behaviors</li>
         </ul>
       </div>
     </div>
@@ -75,16 +73,16 @@
       <div class="section-title">Publications</div>
 
       <div class="item">
-        <p style="margin:0 0 8px;">
+        <p style="margin-bottom:8px;">
           Robust Gradient Ascent for Backdoor Unlearning (Submission, 2025)
         </p>
-        <p class="small" style="margin:0;">
+        <p class="small">
           <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a>
         </p>
       </div>
 
       <div class="item">
-        <p class="small" style="margin:10px 0 0;">
+        <p class="small">
           For an up-to-date list, see my
           <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.
         </p>
@@ -94,7 +92,6 @@
     <!-- CONTACT -->
     <div class="section" id="contact">
       <div class="section-title">Contact</div>
-
       <p class="small">
         Email: <a href="mailto:YOUR_EMAIL@usu.edu">YOUR_EMAIL@usu.edu</a><br/>
         GitHub: <a href="https://github.com/xingyizhao" target="_blank" rel="noopener">github.com/xingyizhao</a>
