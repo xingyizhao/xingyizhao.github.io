@@ -69,7 +69,7 @@ a:hover, a:focus{
 
 .hero-left p,
 .section p{
-  font-size: 20px;           /* slightly larger text */
+  font-size: 10px;           /* slightly larger text */
   line-height: 1.9;          /* airy spacing */
   letter-spacing: 0.01em;    /* subtle */
   margin: 0 0 18px;
@@ -77,7 +77,7 @@ a:hover, a:focus{
 
 /* Photo */
 .profile-photo{
-  width: 240px;
+  width: 24px;
   height: auto;
   border-radius: 6px;
   border: 1px solid var(--border);
