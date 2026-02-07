@@ -4,100 +4,94 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Xingyi Zhao</title>
-  <meta name="description" content="Xingyi Zhao — PhD student in NLP & AI security. Research on LLM security, backdoors, and alignment robustness." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Xingyi Zhao — PhD student in NLP & AI security. Research on LLM security, safe post-training, and alignment." />
+  <!-- Cache-bust so CSS updates always show -->
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
   <div class="container">
-    
+
     <div class="nav">
-      <div class="links">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="cv.html">CV</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="#contact">Contact</a>
     </div>
-    
-  <div class="hero" id="about">
-  <div class="card">
-    <h1>Xingyi Zhao</h1>
-    <h2>PhD Student, Utah State University • NLP & AI Security</h2>
 
-    <p>
-    I am Xingyi Zhao, a Ph.D. candidate in Computer Science at Utah State University,
-    advised by <a href="https://yuan.shuhan.org/" target="_blank" rel="noopener">Dr. Shuhan Yuan</a>.
-    I received both my B.E. and M.E. from the School of Artificial Intelligence and Automation,
-    Huazhong University of Science and Technology (HUST). My research focuses on LLM security and
-    safe post-training, with interests in faithful reasoning, red-teaming, and alignment-oriented
-    training methods (e.g., SFT and RLHF). I study how malicious behaviors emerge and persist in
-    language models, and I develop practical methods for malicious alignment analysis, harmful
-    information unlearning, and safety post-training while preserving model utility.
-    </p>
+    <!-- HERO -->
+    <div class="hero" id="about">
+      <!-- IMPORTANT: use hero-left so your CSS applies -->
+      <div class="hero-left">
+        <h1>Xingyi Zhao</h1>
+        <h2>PhD Student, Utah State University • NLP & AI Security</h2>
 
+        <p>
+          I am Xingyi Zhao, a Ph.D. candidate in Computer Science at Utah State University,
+          advised by <a href="https://yuan.shuhan.org/" target="_blank" rel="noopener">Dr. Shuhan Yuan</a>.
+          I received both my B.E. and M.E. from the School of Artificial Intelligence and Automation,
+          Huazhong University of Science and Technology (HUST). My research focuses on LLM security and
+          safe post-training, with interests in faithful reasoning, red-teaming, and alignment-oriented
+          training methods (e.g., SFT and RLHF). I study how malicious behaviors emerge and persist in
+          language models, and I develop practical methods for malicious alignment analysis, harmful
+          information unlearning, and safety post-training while preserving model utility.
+        </p>
 
-    <p class="small">
-      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
-      <a href="https://github.com/xingyizhao" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
-  </div>
-
-  <div class="card">
-    <!-- Put your photo file in the repo root as: photo.jpg (or photo.png) -->
-    <img class="profile-photo" src="xingyi zhao.jpg" alt="Xingyi Zhao" />
-  </div>
-</div>
-</div>
-
-    <div class="grid" id="research">
-      <div class="card">
-        <h2>Research Focus</h2>
-        <div class="item">
-          <b>Backdoor persistence & unlearning</b>
-          <ul class="list">
-            <li>Trigger-induced behaviors in instruction tuning and downstream SFT</li>
-            <li>Unlearning without over-correction / behavior remapping</li>
-            <li>Geometry/loss-landscape analysis for persistence</li>
-          </ul>
-        </div>
-        <div class="item" style="margin-top:12px;">
-          <b>Robust training & alignment</b>
-          <ul class="list">
-            <li>RLHF variants (SFT/DPO/PPO), safety alignment</li>
-            <li>Adversarial evaluation, shortcut learning diagnostics</li>
-            <li>Efficient finetuning (LoRA/PEFT, DeepSpeed)</li>
-          </ul>
-        </div>
+        <p class="small">
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
+          <a href="https://github.com/xingyizhao" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
       </div>
 
-      <div class="card" id="publications">
-        <h2>Selected Publications / Submissions</h2>
-
-        <div class="item">
-          <b>Robust Gradient Ascent for Backdoor Unlearning</b>
-          <div class="small">Submission • 2025</div>
-          <div class="small">
-            <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a>
-          </div>
-        </div>
-
-        <div class="item" style="margin-top:12px;">
-          <b>More</b>
-          <div class="small">
-            See full list on <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.
-          </div>
-        </div>
-
-        <div class="footer">
-          Replace the placeholders with your real Scholar/PDF/Code links.
-        </div>
+      <div>
+        <!-- Tip: avoid spaces in filenames; rename to xingyi-zhao.jpg if possible -->
+        <img class="profile-photo" src="xingyi zhao.jpg" alt="Xingyi Zhao" />
       </div>
     </div>
 
-    <div class="card" id="contact" style="margin-top:18px;">
-      <h2>Contact</h2>
+    <!-- RESEARCH -->
+    <div class="section" id="research">
+      <div class="section-title">Research</div>
+      <p>
+        My research focuses on LLM security and safe post-training. I am particularly interested in
+        malicious alignment analysis, harmful information unlearning, and safety post-training while
+        preserving model utility.
+      </p>
+
+      <div class="item">
+        <ul class="list">
+          <li>LLM backdoors and post-training robustness</li>
+          <li>Unlearning harmful information without utility loss</li>
+          <li>Red-teaming and evaluation for safety behaviors</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section" id="publications">
+      <div class="section-title">Publications</div>
+
+      <div class="item">
+        <p style="margin-bottom:8px;">
+          Robust Gradient Ascent for Backdoor Unlearning (Submission, 2025)
+        </p>
+        <p class="small">
+          <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a>
+        </p>
+      </div>
+
+      <div class="item">
+        <p class="small">
+          For an up-to-date list, see my
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+      <div class="section-title">Contact</div>
       <p class="small">
         Email: <a href="mailto:YOUR_EMAIL@usu.edu">YOUR_EMAIL@usu.edu</a><br/>
         GitHub: <a href="https://github.com/xingyizhao" target="_blank" rel="noopener">github.com/xingyizhao</a>
