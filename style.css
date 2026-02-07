@@ -210,12 +210,12 @@ h2{
 
 /* Left column: tag + image */
 .pub-left{
-  width: 140px;            /* controls left column width */
+  width: 500px;            /* controls left column width */
   flex: 0 0 140px;
 }
 
 .pub-left .tag{
-  margin-top: 120px
+  margin-top: 0px
   display:inline-block;
   margin-bottom: 10px;
 }
