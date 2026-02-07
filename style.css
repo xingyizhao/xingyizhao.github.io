@@ -77,12 +77,12 @@ a:hover, a:focus{
 
 /* Photo */
 .profile-photo{
-  width: 220px;
+  width: 240px;
   height: auto;
   border-radius: 6px;
   border: 1px solid var(--border);
   display: block;
-  margin-top: 180px;  
+  margin-top: 160px;  
 }
 
 
