@@ -5,28 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XYZ.AI Overcooked Demo</title>
   <meta name="description" content="A text-to-action animation demo: Alice passes a plate to Bob." />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body class="demo-page">
   <main class="demo-shell" aria-label="Text-to-action animation demo">
     <section class="demo-dialogue" aria-label="Dialogue area">
-      Pass the plate to Bob
+      <span class="user-prefix">User:</span>
+      <span class="typed-word">Alice</span>
+      <span class="typed-word">please</span>
+      <span class="typed-word">pass</span>
+      <span class="typed-word">the</span>
+      <span class="typed-word">plate</span>
+      <span class="typed-word">to</span>
+      <span class="typed-word">BOB</span>
     </section>
 
     <section class="demo-stage" aria-label="Animation area">
       <div class="kitchen">
         <div class="counter counter-left"></div>
         <div class="counter counter-right"></div>
+        <div class="divider-table"></div>
         <div class="stove"></div>
         <div class="soup-pot">
           <span></span><span></span><span></span>
         </div>
 
-        <div class="plate-stack stack-left">
-          <span></span><span></span><span></span>
+        <div class="plate-stack stack-left" aria-label="Alice table starts with five plates">
+          <span class="plate-left left-plate-1"></span>
+          <span class="plate-left left-plate-2"></span>
+          <span class="plate-left left-plate-3"></span>
+          <span class="plate-left left-plate-4"></span>
+          <span class="plate-left left-plate-5"></span>
         </div>
-        <div class="plate-stack stack-right">
-          <span></span><span></span><span></span>
+        <div class="plate-stack stack-right" aria-label="Bob table starts with two plates and ends with seven">
+          <span class="plate-right right-plate-1"></span>
+          <span class="plate-right right-plate-2"></span>
+          <span class="plate-right right-plate-3"></span>
+          <span class="plate-right right-plate-4"></span>
+          <span class="plate-right right-plate-5"></span>
+          <span class="plate-right right-plate-6"></span>
+          <span class="plate-right right-plate-7"></span>
         </div>
 
         <div class="character alice" aria-label="Alice">
@@ -43,8 +61,11 @@
           <div class="name">Bob</div>
         </div>
 
-        <div class="plate moving-plate"></div>
-        <div class="handoff-label">plate</div>
+        <div class="plate moving-plate moving-plate-1"></div>
+        <div class="plate moving-plate moving-plate-2"></div>
+        <div class="plate moving-plate moving-plate-3"></div>
+        <div class="plate moving-plate moving-plate-4"></div>
+        <div class="plate moving-plate moving-plate-5"></div>
       </div>
     </section>
   </main>
