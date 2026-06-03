@@ -6,7 +6,7 @@
   <title>Xingyi Zhao</title>
   <meta name="description" content="Xingyi Zhao — PhD student in NLP & AI security." />
   <!-- Cache-bust so CSS updates always show -->
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <div class="container">
@@ -14,6 +14,9 @@
     <div class="nav">
       <a href="#about">About</a>
       <a href="#publications">Publications</a>
+      <a href="#services">Services</a>
+      <a href="#awards">Awards</a>
+      <a class="nav-studio-button" href="xyz-ai.html">XYZ.AI</a>
     </div>
 
     <!-- HERO -->
@@ -21,17 +24,20 @@
       <!-- IMPORTANT: use hero-left so your CSS applies -->
       <div class="hero-left">
         <h1>Xingyi Zhao</h1>
-        <h2>PhD Student, Utah State University • NLP & AI Security</h2>
+        <h2>PhD Student, Utah State University • LLM & AI Security & Text2Action</h2>
 
         <p>
           I am a last year Ph.D student in Computer Science at Utah State University,
           advised by <a href="https://yuan.shuhan.org/" target="_blank" rel="noopener">Dr. Shuhan Yuan</a>.
           I received both my B.Eng. and M.Eng. from the School of Artificial Intelligence and Automation,
-          Huazhong University of Science and Technology (HUST). My research focuses on LLMs security and
+          Huazhong University of Science and Technology (HUST). My research mainly focuses on LLMs security and
           safe post-training, with interests in faithful reasoning, red-teaming, and alignment-oriented
-          training methods (e.g., SFT and RLHF). My recent works mainly focus on exploring how malicious behaviors emerge and persist in large
+          training methods (e.g., SFT and RLHF). My recent works focus on exploring how malicious behaviors emerge and persist in large
           language models, and I develop practical methods for malicious alignment analysis, harmful
           information unlearning, and safety post-training while preserving model utility.
+        </p>
+        <p class="about-links">
+          <a class="btn" href="HUST-Xingyi_Zhao.pdf" target="_blank" rel="noopener">CV</a>
         </p>
       </div>
 
@@ -41,8 +47,32 @@
       </div>
     </div>
 
-    <div class="section" id="Publications">
+    <div class="section" id="publications">
     <div class="section-title">Selected Publications</div>
+
+    <div class="pub pub-with-thumb">
+      <div class="pub-left">
+        <span class="tag tag-purple">ICML</span>
+        <img class="pub-thumb" src="BAD-BOOM.png" alt="Paper thumbnail: Broadening the Backdoor Basin: Understanding LLM Backdoors Collapse and Making Backdoors Persistent" />
+      </div>
+
+      <div class="pub-right">
+        <div class="pub-title">Broadening the Backdoor Basin: Understanding LLM Backdoors Collapse and Making Backdoors Persistent</div>
+    
+        <div class="pub-authors">
+          <strong>Xingyi Zhao</strong>, Tian Xie, Xiaojun Qi, Depeng Xu, Shuhan Yuan
+        </div>
+    
+        <div class="pub-venue">
+          In Proceedings of the 43rd International Conference on Machine Learning (ICML), 2026
+        </div>
+    
+        <div class="pub-links">
+          <a class="btn" href="https://icml.cc/virtual/2026/poster/66722" target="_blank" rel="noopener">PDF</a>
+          <a class="btn" href="https://github.com/xingyizhao/BAD-BOOM" target="_blank" rel="noopener">CODE</a>
+        </div>
+      </div>
+    </div>
 
     <div class="pub pub-with-thumb">
       <div class="pub-left">
@@ -117,6 +147,27 @@
   </div>      
   </div>
 
+  <div class="section" id="services">
+    <div class="section-title">Services</div>
+    <ul class="list service-list">
+      <li>International Conference on Machine Learning Review (ICML): 2026</li>
+      <li>Association for Computational Linguistics (ACL) Rolling Review: 2023, 2024, 2025</li>
+      <li>Conference on Neural Information Processing Systems Review (NeurIPS): 2026</li>
+      <li>International Conference on Learning Representation Review (ICLR): 2026</li>
+      <li>AAAI Conference on Artificial Intelligence Review (AAAI): 2026</li>
+      <li>Technical Program Committee (TPC): CHASE 2026 Workshop ARMH</li>
+    </ul>
+  </div>
+
+  <div class="section" id="awards">
+    <div class="section-title">Awards</div>
+    <ul class="list service-list">
+      <li>International Conference on Machine Learning Review (ICML): 2026 Top <span class="gold-text">Golden</span> Reviewer</li>
+      <li>IEEE Big Data 2024 Volunteer Lead: 2024</li>
+      <li>Utah State University Graduate Student Travel Award: 2024, 2025</li>
+    </ul>
+  </div>
+
   <!-- Bottom social buttons -->
   <div class="social-links">
     <a class="btn" href="https://scholar.google.com/citations?user=yVq7_1sAAAAJ&hl=en" target="_blank" rel="noopener">GOOGLE SCHOLAR</a>
@@ -125,7 +176,7 @@
   </div>
 
 <div class="footer">
-  © <span id="y"></span> Xingyi Zhao · Built with Codex
+  © <span id="y"></span> Xingyi Zhao · Built with Codex and Github Pages
 </div>
 
 </div>

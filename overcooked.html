@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XYZ.AI Overcooked Demo</title>
+  <meta name="description" content="A text-to-action animation demo: Alice passes a plate to Bob." />
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body class="demo-page">
+  <main class="demo-shell" aria-label="Text-to-action animation demo">
+    <section class="demo-dialogue" aria-label="Dialogue area">
+      Pass the plate to Bob
+    </section>
+
+    <section class="demo-stage" aria-label="Animation area">
+      <div class="kitchen">
+        <div class="counter counter-left"></div>
+        <div class="counter counter-right"></div>
+        <div class="stove"></div>
+        <div class="soup-pot">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="plate-stack stack-left">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="plate-stack stack-right">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="character alice" aria-label="Alice">
+          <div class="chef-hat"></div>
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="name">Alice</div>
+        </div>
+
+        <div class="character bob" aria-label="Bob">
+          <div class="chef-hat"></div>
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="name">Bob</div>
+        </div>
+
+        <div class="plate moving-plate"></div>
+        <div class="handoff-label">plate</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
