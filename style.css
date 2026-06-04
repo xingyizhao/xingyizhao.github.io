@@ -385,6 +385,13 @@ h2{
   white-space: nowrap;
 }
 
+.blog-author{
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0 0 26px;
+  text-align: center;
+}
+
 .blog-post p{
   font-size: 21px;
   line-height: 1.55;
