@@ -514,6 +514,37 @@ h2{
   background: #9f6b22;
 }
 
+.onion-cluster{
+  position: absolute;
+  width: 74px;
+  height: 56px;
+}
+
+.onion-left{
+  left: 108px;
+  top: 118px;
+}
+
+.onion-right{
+  left: 430px;
+  top: 32px;
+}
+
+.onion-cluster span{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff2a8;
+}
+
+.onion-cluster span:nth-child(1){left: 0; top: 18px;}
+.onion-cluster span:nth-child(2){left: 16px; top: 8px;}
+.onion-cluster span:nth-child(3){left: 34px; top: 18px;}
+.onion-cluster span:nth-child(4){left: 0; top: 36px;}
+.onion-cluster span:nth-child(5){left: 18px; top: 34px;}
+.onion-cluster span:nth-child(6){left: 38px; top: 36px;}
+
 .handoff-zone{
   display: none;
   position: absolute;
@@ -747,7 +778,7 @@ h2{
   29.5%{opacity:1; transform: translate(314px,182px);}
   31%{opacity:1; transform: translate(348px,182px);}
   32.5%{opacity:1; transform: translate(472px,182px);}
-  33.2%{opacity:1; transform: translate(520px,324px);}
+  33.2%{opacity:1; transform: translate(552px,318px);}
 }
 
 @keyframes plate-trip-2{
@@ -757,7 +788,7 @@ h2{
   42.5%{opacity:1; transform: translate(314px,182px);}
   44%{opacity:1; transform: translate(348px,182px);}
   45.5%{opacity:1; transform: translate(472px,182px);}
-  46.2%{opacity:1; transform: translate(520px,324px);}
+  46.2%{opacity:1; transform: translate(512px,338px);}
 }
 
 @keyframes plate-trip-3{
@@ -767,7 +798,7 @@ h2{
   55.5%{opacity:1; transform: translate(314px,182px);}
   57%{opacity:1; transform: translate(348px,182px);}
   58.5%{opacity:1; transform: translate(472px,182px);}
-  59.2%{opacity:1; transform: translate(520px,324px);}
+  59.2%{opacity:1; transform: translate(542px,346px);}
 }
 
 @keyframes plate-trip-4{
@@ -777,7 +808,7 @@ h2{
   68.5%{opacity:1; transform: translate(314px,182px);}
   70%{opacity:1; transform: translate(348px,182px);}
   71.5%{opacity:1; transform: translate(472px,182px);}
-  72.2%{opacity:1; transform: translate(520px,324px);}
+  72.2%{opacity:1; transform: translate(568px,332px);}
 }
 
 @keyframes plate-trip-5{
@@ -787,7 +818,7 @@ h2{
   81.5%{opacity:1; transform: translate(314px,182px);}
   83%{opacity:1; transform: translate(348px,182px);}
   84.5%{opacity:1; transform: translate(472px,182px);}
-  85.2%{opacity:1; transform: translate(520px,324px);}
+  85.2%{opacity:1; transform: translate(566px,302px);}
 }
 
 @keyframes left-plate-1{0%, 23.9%{opacity:1;} 24%, 100%{opacity:0;}}
