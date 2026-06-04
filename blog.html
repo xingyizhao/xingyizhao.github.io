@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XYZ.AI Blog</title>
+  <meta name="description" content="Writing and updates from XYZ.AI." />
+  <link rel="stylesheet" href="style.css?v=12" />
+</head>
+<body class="studio-page">
+  <div class="container studio-container">
+    <div class="studio-topbar">
+      <a class="studio-brand" href="index.html" aria-label="Xingyi Zhao homepage">
+        <img src="XYZ AI.png" alt="XYZ.AI" />
+      </a>
+      <div class="studio-nav-links">
+        <a href="xyz-ai.html">Product</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </div>
+
+    <main class="blog-page">
+      <article class="blog-post">
+        <h1>Text-State-to-Action: A Lightweight Alternative to Vision-Language-Action Models for Robotics</h1>
+
+        <p>
+          The recent progress of Vision-Language-Action models has pushed robotics toward a new paradigm: directly
+          mapping visual observations and human instructions into robot actions. In this framework, a model receives
+          images, language commands, and sometimes robot states, then outputs actions that can be executed by a
+          robot. This direction is powerful and promising, but it also comes with a heavy cost: large-scale multimodal
+          training, expensive robot demonstrations, embodiment-specific action spaces, and limited interpretability.
+        </p>
+
+        <p>
+          An alternative route is worth exploring: instead of training an end-to-end Vision-Language-Action model, we
+          can convert visual perception into structured textual world states, and then use a pure-text large language
+          model to perform reasoning and action planning.
+        </p>
+
+        <p>
+          I call this idea <strong>Text-State-to-Action</strong>.
+        </p>
+
+        <p>
+          Difference between <strong>Vision-Language-Action (VLA)</strong> and <strong>Text-State-to-Action (T2A)</strong>. In a Vision-Language-Action system, the
+          model is asked to learn a direct multimodal mapping from perception to action. It must look at the world,
+          understand the instruction, infer the relevant state, and produce executable behavior in one learned system.
+          In Text-State-to-Action, perception is handled by external modules that convert the environment into a
+          structured textual state. The language model can then focus on what it is good at: reasoning over state,
+          decomposing goals, coordinating agents, and choosing the next action.
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Vision-Language-Action</th>
+              <th>Text-State-to-Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Input</td>
+              <td>Raw image or video with language</td>
+              <td>Textual world state with language</td>
+            </tr>
+            <tr>
+              <td>Model type</td>
+              <td>Multimodal policy model</td>
+              <td>Pure-text reasoning model</td>
+            </tr>
+            <tr>
+              <td>Output</td>
+              <td>Robot actions or action tokens</td>
+              <td>Structured action streams or skill calls</td>
+            </tr>
+            <tr>
+              <td>Training data</td>
+              <td>Vision-language-action trajectories</td>
+              <td>Text-state-action pairs</td>
+            </tr>
+            <tr>
+              <td>Training cost</td>
+              <td>High, because it depends on multimodal demonstrations</td>
+              <td>Lower, because state-action supervision can be more lightweight</td>
+            </tr>
+            <tr>
+              <td>Interpretability</td>
+              <td>Often limited by end-to-end representations</td>
+              <td>Higher, because intermediate states and plans are readable</td>
+            </tr>
+            <tr>
+              <td>Debugging</td>
+              <td>Harder to localize errors</td>
+              <td>Easier to inspect perception, state, reasoning, and action separately</td>
+            </tr>
+            <tr>
+              <td>Embodiment dependence</td>
+              <td>Stronger, since action spaces are often tied to a specific robot</td>
+              <td>Weaker, since textual states and high-level skills can transfer more naturally</td>
+            </tr>
+            <tr>
+              <td>Safety control</td>
+              <td>Harder to inspect before execution</td>
+              <td>Easier to constrain through explicit plans and action checks</td>
+            </tr>
+            <tr>
+              <td>Best use case</td>
+              <td>End-to-end visuomotor control</td>
+              <td>Goal-level planning, multi-agent coordination, and skill composition</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="blog-divider" />
+
+        <h2>Why Text-State-to-Action Is Attractive</h2>
+
+        <h3>1. Lower Training Cost</h3>
+
+        <p>
+          Training Vision-Language-Action models usually requires expensive multimodal data. A typical training example
+          looks like this:
+        </p>
+
+        <pre class="blog-code"><code>image / video + instruction + robot action</code></pre>
+
+        <p>
+          This kind of data is costly because it often depends on real robots, human demonstrations, teleoperation, or
+          high-fidelity simulation. Each data point may require careful setup, physical execution, and embodiment-specific
+          annotation.
+        </p>
+
+        <p>
+          Text-State-to-Action can use a lighter form of supervision:
+        </p>
+
+        <pre class="blog-code"><code>textual world state + instruction + action sequence</code></pre>
+
+        <p>
+          This data is much cheaper to generate. It can be created from simulators, games, virtual environments,
+          manually designed tasks, or even synthetic data generation. Instead of collecting every action through a
+          physical robot, we can describe the world state in text and train the model to reason about what should happen
+          next.
+        </p>
+
+        <h3>2. Better Use of Existing Pure-Text LLMs</h3>
+
+        <p>
+          Another advantage is that we do not need to start from scratch. There are already many strong pure-text large
+          language models, including LLaMA, Qwen, Mistral, and others. These models already have useful abilities for
+          action planning:
+        </p>
+
+        <pre class="blog-code blog-code-block"><code>instruction following
+reasoning
+tool use
+planning
+code generation
+structured output
+multi-step decomposition</code></pre>
+
+        <p>
+          Instead of training a large VLA model to learn perception, reasoning, and control all at once, we can adapt
+          existing text LLMs through post-training. The goal is not to teach the model how pixels map to motor torques.
+          The goal is to teach the model how to operate over a textual state representation:
+        </p>
+
+        <pre class="blog-code blog-code-block"><code>how to read a textual world state
+how to ground instructions to objects
+how to select valid skills
+how to generate executable action streams
+how to replan after failure
+how to obey safety constraints</code></pre>
+
+        <p>
+          This makes the learning problem narrower, more interpretable, and much more efficient.
+        </p>
+
+        <h3>3. More Interpretable and Debuggable</h3>
+
+        <p>
+          A major challenge with end-to-end VLA systems is that failures can be hard to diagnose. If a VLA-controlled
+          robot fails to pick up a cup, the reason may come from many different places:
+        </p>
+
+        <pre class="blog-code blog-code-block"><code>wrong visual understanding
+wrong object grounding
+wrong action prediction
+wrong grasp pose
+low-level control failure
+distribution shift</code></pre>
+
+        <p>
+          The difficulty is that these components are often entangled inside one large model. A failure at the output
+          does not always tell us whether the model misunderstood the scene, misread the instruction, selected the wrong
+          skill, or failed at execution.
+        </p>
+
+        <p>
+          In Text-State-to-Action, the system can be designed more modularly. We can inspect the textual world state,
+          check whether the instruction is grounded correctly, examine the planned action sequence, and validate each
+          skill call before execution. This makes errors easier to localize, and it also gives developers more places to
+          add safety checks, constraints, or recovery policies.
+        </p>
+
+        <h3>4. More Controllable and Safer</h3>
+
+        <p>
+          Because the LLM outputs structured actions, we can add explicit constraints before execution. Instead of
+          directly trusting a low-level action prediction, the system can first check whether the proposed action is
+          valid, safe, and consistent with the current world state.
+        </p>
+
+        <p>
+          This creates a natural control layer between reasoning and execution. For example, the system can reject
+          impossible actions, prevent unsafe tool use, enforce task rules, or require replanning when the current plan
+          violates a constraint. In robotics, this kind of intermediate validation is especially valuable because
+          mistakes can have physical consequences.
+        </p>
+
+        <h3>5. More Embodiment-Agnostic</h3>
+
+        <p>
+          VLA models are often tied to specific robot embodiments and action spaces. A robot arm, a mobile robot, and a
+          humanoid robot may all need very different low-level commands.
+        </p>
+
+        <p>
+          For example, one robot arm may use:
+        </p>
+
+        <pre class="blog-code"><code>&Delta;x, &Delta;y, &Delta;z, &Delta;roll, &Delta;pitch, &Delta;yaw, gripper</code></pre>
+
+        <p>
+          A mobile robot may use:
+        </p>
+
+        <pre class="blog-code"><code>linear_velocity, angular_velocity</code></pre>
+
+        <p>
+          A humanoid robot may have an even larger and more complex action space. Text-State-to-Action separates
+          high-level reasoning from low-level control. The LLM can output general skills:
+        </p>
+
+        <pre class="blog-code blog-code-block"><code>move_to(cup_1)
+grasp(cup_1)
+place(cup_1, table_1)</code></pre>
+
+        <p>
+          Different robots can implement these skills in different ways. As a result, the high-level planner can be
+          reused across platforms, while the low-level controller remains robot-specific. This makes the system more flexible and adaptable to different embodiments with minimal changes. 
+          <strong>(Train Once, Run Anywhere)</strong>
+        </p>
+
+        <h3>6. Unified Interface for Multisensory Robots</h3>
+
+        <p>
+          Text-State-to-Action can also naturally integrate information from many different sensing modules, not only cameras.
+        </p>
+
+        <p>
+          In real robotic systems, visual perception is only one part of the sensory input. A robot may also receive
+          information from depth sensors, tactile sensors, force sensors, pressure sensors, temperature sensors, velocity
+          sensors, radio-frequency sensors, LiDAR, microphones, IMUs, and other external sensing modules. These sensors
+          produce highly heterogeneous data with different formats, frequencies, resolutions, and physical meanings.
+        </p>
+
+        <p>
+          For end-to-end VLA models, this creates a major scalability challenge. If we want the model to directly
+          consume every sensor modality, we need to align vision, language, action, and many additional sensor streams
+          inside one unified training framework. This can quickly become expensive and difficult, because every new
+          sensor introduces a new modality that must be represented, synchronized, and trained together with language
+          and action.
+        </p>
+
+        <p>
+          Text-State-to-Action offers a simpler and more scalable alternative. External sensing modules do not need to be
+          fused into the LLM as raw multimodal inputs. Instead, each sensor can act as a perception module that extracts
+          decision-relevant information and converts it into a structured textual state. After conversion, all sensor information is exposed through the same interface: structured text. The LLM
+          does not need to learn separate raw representations for vision, touch, temperature, pressure, radio frequency,
+          or motion. It only needs to learn how to reason over textualized world states. <strong>Different sensors can be integrated as separate perception modules, while their outputs are unified into the
+          same textual state representation.</strong>
+        </p>
+
+        <p>
+          As a result, post-training becomes much cheaper and more scalable. Instead of training a large multimodal model
+          to align every possible sensor modality with language and action, we can post-train a pure-text LLM on
+          structured state-action data. New sensors can be added by designing new textual state fields, without retraining
+          the entire model from scratch.
+        </p>
+
+        <p>
+          This makes Text-State-to-Action especially suitable for real-world robotics, where robots often rely on many
+          heterogeneous sensors beyond cameras. The framework treats external sensing systems as providers of structured
+          state information, allowing the LLM planner to reason over a unified textual representation of the world.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

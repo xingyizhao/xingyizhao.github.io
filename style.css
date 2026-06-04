@@ -372,6 +372,106 @@ h2{
   text-decoration: none;
 }
 
+.blog-page{
+  max-width: 1320px;
+  margin: 72px auto 0;
+}
+
+.blog-page h1{
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  margin-bottom: 14px;
+  white-space: nowrap;
+}
+
+.blog-post p{
+  font-size: 21px;
+  line-height: 1.55;
+  margin: 0 0 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.blog-post h2{
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 44px 0 18px;
+}
+
+.blog-post h3{
+  font-size: 22px;
+  line-height: 1.35;
+  margin: 26px 0 12px;
+}
+
+.blog-code{
+  margin: 12px 0 20px;
+  padding: 14px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #f8fafc;
+  overflow-x: auto;
+}
+
+.blog-code code{
+  font-size: 15px;
+  color: #111827;
+}
+
+.blog-code-block{
+  border-radius: 20px;
+  padding: 18px 22px;
+}
+
+.blog-code-block code{
+  display: block;
+  line-height: 1.65;
+}
+
+.blog-principle{
+  margin: 26px 0 0;
+  padding: 4px 0 4px 22px;
+  border-left: 3px solid #d1d5db;
+  color: #111827;
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.blog-divider{
+  border: 0;
+  border-top: 1px solid #d1d5db;
+  margin: 42px 0 38px;
+}
+
+.comparison-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 26px;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.comparison-table th,
+.comparison-table td{
+  padding: 13px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparison-table th{
+  color: #111827;
+  font-weight: 700;
+  background: #f8fafc;
+}
+
+.comparison-table td:first-child,
+.comparison-table th:first-child{
+  width: 190px;
+  font-weight: 650;
+}
+
 .studio-product{
   max-width: 1040px;
   margin: 86px 0 0;
